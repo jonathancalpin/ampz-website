@@ -1,0 +1,454 @@
+/* ===== Reset & Base ===== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #1C1C2E;
+  color: #ffffff;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== Typography ===== */
+h1, h2, h3 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+}
+
+/* ===== Layout ===== */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+section {
+  position: relative;
+  padding: 5rem 0;
+  overflow: hidden;
+}
+
+/* ===== Decorative Background Circles ===== */
+.bg-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 59, 92, 0.08);
+  pointer-events: none;
+}
+
+.bg-circle-1 {
+  width: 600px;
+  height: 600px;
+  top: -200px;
+  right: -200px;
+}
+
+.bg-circle-2 {
+  width: 400px;
+  height: 400px;
+  bottom: -100px;
+  left: -150px;
+}
+
+.bg-circle-3 {
+  width: 800px;
+  height: 800px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-color: rgba(255, 255, 255, 0.03);
+}
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-block;
+  padding: 0.875rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  border: none;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 59, 92, 0.3);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #FF3B5C, #FF6B81);
+  color: #fff;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+.btn-outline:hover {
+  border-color: #FF3B5C;
+  box-shadow: 0 8px 25px rgba(255, 59, 92, 0.15);
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6rem 1.5rem 4rem;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-logo {
+  width: 180px;
+  height: auto;
+  margin: 0 auto 2rem;
+  border-radius: 36px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.hero h1 {
+  margin-bottom: 1rem;
+}
+
+.hero h1 .accent {
+  background: linear-gradient(135deg, #FF3B5C, #FF6B81);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero .subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 2.5rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero .btn {
+  margin: 0.5rem;
+}
+
+/* ===== Feature Sections ===== */
+.feature {
+  text-align: center;
+}
+
+.feature .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.feature-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+}
+
+.feature p {
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+/* Feature — Red gradient background */
+.feature-gradient {
+  background: linear-gradient(160deg, #2a1020 0%, #1C1C2E 50%, #1a1028 100%);
+}
+
+.feature-gradient .feature-icon {
+  background: linear-gradient(135deg, #FF3B5C, #FF6B81);
+}
+
+/* Feature — Dark background */
+.feature-dark {
+  background: #161625;
+}
+
+.feature-dark .feature-icon {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.feature-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem 1.5rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.feature-list li {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+}
+
+.feature-list li::before {
+  content: "✦ ";
+  color: #FF3B5C;
+}
+
+/* ===== Pricing Section ===== */
+.pricing {
+  background: linear-gradient(160deg, #2a1020 0%, #1C1C2E 50%, #1a1028 100%);
+  text-align: center;
+}
+
+.pricing h2 {
+  margin-bottom: 0.5rem;
+}
+
+.pricing > .container > p {
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.pricing-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  transition: border-color 0.3s;
+}
+
+.pricing-card:hover {
+  border-color: rgba(255, 59, 92, 0.3);
+}
+
+.pricing-card.featured {
+  border-color: rgba(255, 59, 92, 0.4);
+  background: rgba(255, 59, 92, 0.06);
+}
+
+.pricing-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+}
+
+.pricing-card .price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #FF6B81;
+  margin-bottom: 1.5rem;
+}
+
+.pricing-card ul {
+  list-style: none;
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.pricing-card ul li {
+  padding: 0.4rem 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+}
+
+.pricing-card ul li::before {
+  content: "✓ ";
+  color: #FF3B5C;
+  font-weight: 700;
+}
+
+.pricing-card .badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #FF3B5C, #FF6B81);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+/* ===== CTA Section ===== */
+.cta {
+  text-align: center;
+  padding: 5rem 1.5rem;
+  background: #161625;
+}
+
+.cta h2 {
+  margin-bottom: 1rem;
+}
+
+.cta p {
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+/* ===== Footer ===== */
+.footer {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  background: #1C1C2E;
+}
+
+.footer p {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0 auto;
+}
+
+.footer a {
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 0.2s;
+}
+
+.footer a:hover {
+  color: #FF6B81;
+}
+
+.footer .footer-links {
+  margin-top: 0.5rem;
+}
+
+.footer .footer-links a {
+  margin: 0 0.75rem;
+}
+
+/* ===== Privacy Policy Page ===== */
+.privacy-page {
+  padding: 4rem 1.5rem;
+  min-height: 100vh;
+}
+
+.privacy-page h1 {
+  margin-bottom: 0.5rem;
+}
+
+.privacy-page .effective-date {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.9rem;
+  margin-bottom: 3rem;
+}
+
+.privacy-page h2 {
+  font-size: 1.4rem;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.privacy-page p,
+.privacy-page li {
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 700px;
+  margin-bottom: 1rem;
+}
+
+.privacy-page ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.privacy-page a {
+  color: #FF6B81;
+}
+
+.privacy-page a:hover {
+  text-decoration: underline;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+}
+
+.back-link:hover {
+  color: #FF6B81;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  section {
+    padding: 3.5rem 0;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 5rem 1.5rem 3rem;
+  }
+
+  .hero-logo {
+    width: 130px;
+    border-radius: 28px;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+
+  .feature-list {
+    flex-direction: column;
+    align-items: center;
+  }
+}
