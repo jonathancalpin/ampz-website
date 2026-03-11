@@ -5,13 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ampz — Neural Amp Modeling for iOS</title>
   <meta name="description" content="Ampz brings ultra-low latency Neural Amp Modeling to your iPhone. Real amp tones, real-time processing, no compromises. Coming Soon.">
+  <link rel="canonical" href="https://www.ampz.app/">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Ampz — Neural Amp Modeling for iOS">
   <meta property="og:description" content="Ultra-low latency Neural Amp Modeling for iPhone. Real amp tones, real-time processing. Coming Soon.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.ampz.app">
+  <meta property="og:url" content="https://www.ampz.app/">
   <meta property="og:image" content="https://www.ampz.app/images/app-icon.png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:site_name" content="Ampz">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ampz — Neural Amp Modeling for iOS">
+  <meta name="twitter:description" content="Ultra-low latency Neural Amp Modeling for iPhone. Real amp tones, real-time processing. Coming Soon.">
+  <meta name="twitter:image" content="https://www.ampz.app/images/app-icon.png">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Ampz",
+    "operatingSystem": "iOS",
+    "applicationCategory": "MultimediaApplication",
+    "description": "Ultra-low latency Neural Amp Modeling for iPhone. Run .nam files in real time with sub-2.5ms latency. Full effects chain, presets, IR loader, and Tone3000 cloud integration.",
+    "url": "https://www.ampz.app",
+    "image": "https://www.ampz.app/images/app-icon.png",
+    "author": {
+      "@type": "Organization",
+      "name": "LNH Enterprises LLC",
+      "url": "https://www.ampz.app"
+    },
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/PreOrder",
+      "priceCurrency": "USD"
+    },
+    "featureList": [
+      "Neural Amp Modeling with sub-2.5ms latency",
+      "10-slot effects chain",
+      "100-slot preset system",
+      "IR/cabinet loader",
+      "Tone3000 cloud integration",
+      "Chromatic tuner",
+      "MIDI control",
+      "Drum machine",
+      "Looper"
+    ]
+  }
+  </script>
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
@@ -29,6 +74,15 @@
 </head>
 <body>
 
+  <!-- ===== Header / Nav ===== -->
+  <header>
+    <nav aria-label="Main navigation">
+      <a href="#features" class="sr-only">Skip to features</a>
+    </nav>
+  </header>
+
+  <main>
+
   <!-- ===== Hero ===== -->
   <section class="hero">
     <div class="bg-circle bg-circle-1"></div>
@@ -36,7 +90,7 @@
     <div class="bg-circle bg-circle-3"></div>
 
     <div class="hero-content">
-      <img src="images/app-icon.png" alt="Ampz App Icon" class="hero-logo">
+      <img src="images/app-icon.png" alt="Ampz — Neural Amp Modeling iOS app icon" class="hero-logo">
       <h1>Neural Amp Modeling for iOS —&nbsp;<span class="accent">Redefined</span></h1>
       <p class="subtitle">Ultra-low latency amp tones on your iPhone. Powered by real neural networks — no compromises.</p>
       <a href="mailto:jonathan@ampz.app?subject=Ampz%20Waitlist" class="btn btn-primary">Join the Waitlist</a>
@@ -44,7 +98,7 @@
       <a href="Ampz-User-Manual.pdf" class="btn btn-outline" target="_blank">User Manual</a>
 
       <div class="hero-screenshot">
-        <img src="images/screenshots/main-view.png" alt="Ampz main interface with effects chain and amp controls" loading="eager" width="2000" height="920">
+        <img src="images/screenshots/main-view.png" alt="Ampz main interface showing 10-slot effects chain and NAM amp controls on iPhone" loading="eager" width="2000" height="920">
       </div>
     </div>
   </section>
@@ -55,9 +109,10 @@
     <div class="container">
       <div class="feature-icon">🎸</div>
       <h2>Neural Amp Modeling</h2>
+      <h3>A2 Architecture — C++ Inference Engine for iOS</h3>
       <p>Powered by the A2 Architecture — a native C++ inference engine built for iOS. Load any .nam model with 100% original fidelity. No conversion, no quality loss, no compromises. Just the exact tone the model creator captured, running in real time with under 2.5ms latency.</p>
       <div class="feature-screenshot">
-        <img src="images/screenshots/performance-view.png" alt="Ampz performance view with pedalboard grid" loading="lazy" width="2000" height="920">
+        <img src="images/screenshots/performance-view.png" alt="Ampz performance view showing real-time latency meter and pedalboard grid" loading="lazy" width="2000" height="920">
       </div>
       <a href="mailto:jonathan@ampz.app?subject=Ampz%20Waitlist" class="btn btn-primary">Coming Soon — Join the Waitlist</a>
     </div>
@@ -69,6 +124,7 @@
     <div class="container">
       <div class="feature-icon">🎛️</div>
       <h2>Everything in Your Signal Chain</h2>
+      <h3>10-Slot Effects Chain with Studio-Grade Processing</h3>
       <p>A full pedalboard on your phone. 10-slot effects chain with studio-grade processing — all running natively on iOS.</p>
       <ul class="feature-list">
         <li>Reverb</li>
@@ -83,7 +139,7 @@
         <li>Looper</li>
       </ul>
       <div class="feature-screenshot">
-        <img src="images/screenshots/looper-main-view.png" alt="Ampz looper with dual circular waveform display" loading="lazy" width="2000" height="920">
+        <img src="images/screenshots/looper-main-view.png" alt="Ampz looper with dual circular waveform display for recording and overdubbing" loading="lazy" width="2000" height="920">
       </div>
       <a href="mailto:jonathan@ampz.app?subject=Ampz%20Waitlist" class="btn btn-primary">Coming Soon</a>
     </div>
@@ -95,9 +151,10 @@
     <div class="container">
       <div class="feature-icon">☁️</div>
       <h2>Cloud Model Browser</h2>
+      <h3>Tone3000 Integration — Thousands of NAM Models</h3>
       <p>Browse and download thousands of amp models directly from within the app. Connect your Tone3000 account and build your collection without leaving Ampz.</p>
       <div class="feature-screenshot">
-        <img src="images/screenshots/tone-3000-nam-login.png" alt="Ampz cloud model browser login" loading="lazy" width="2000" height="920">
+        <img src="images/screenshots/tone-3000-nam-login.png" alt="Ampz in-app Tone3000 browser for downloading NAM models and impulse responses" loading="lazy" width="2000" height="920">
       </div>
       <a href="mailto:jonathan@ampz.app?subject=Ampz%20Waitlist" class="btn btn-primary">Coming Soon</a>
     </div>
@@ -151,14 +208,16 @@
     </div>
   </section>
 
+  </main>
+
   <!-- ===== Footer ===== -->
   <footer class="footer">
     <p>&copy; 2026 LNH Enterprises LLC. All rights reserved.</p>
-    <div class="footer-links">
+    <nav class="footer-links" aria-label="Footer navigation">
       <a href="mailto:jonathan@ampz.app">Contact</a>
       <a href="Ampz-User-Manual.pdf" target="_blank">User Manual</a>
       <a href="privacy.html">Privacy Policy</a>
-    </div>
+    </nav>
   </footer>
 
 </body>
