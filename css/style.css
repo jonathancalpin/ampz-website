@@ -448,6 +448,38 @@ section {
   color: #FF6B81;
 }
 
+/* ===== Screenshot Styling ===== */
+.hero-screenshot,
+.feature-screenshot {
+  width: 100%;
+  max-width: 960px;
+  margin: 2.5rem auto;
+}
+
+.hero-screenshot img,
+.feature-screenshot img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.hero-screenshot {
+  max-width: 1000px;
+  margin-top: 3rem;
+  margin-bottom: 0;
+}
+
+.hero-screenshot img {
+  border-radius: 20px;
+  box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.6),
+    0 0 40px rgba(255, 59, 92, 0.08),
+    0 0 0 1px rgba(255, 59, 92, 0.12);
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
   section {
@@ -472,5 +504,15 @@ section {
   .feature-list {
     flex-direction: column;
     align-items: center;
+  }
+
+  .hero-screenshot,
+  .feature-screenshot {
+    margin: 1.5rem auto;
+  }
+
+  .hero-screenshot img,
+  .feature-screenshot img {
+    border-radius: 12px;
   }
 }
