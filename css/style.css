@@ -259,14 +259,15 @@ section {
 }
 
 .pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  display: flex;
+  justify-content: center;
   gap: 1.5rem;
   max-width: 700px;
   margin: 0 auto;
 }
 
 .pricing-card {
+  flex: 0 1 380px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
