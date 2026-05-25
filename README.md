@@ -1,18 +1,21 @@
 # Ampz Website — ampz.app
 
-Static website for [www.ampz.app](https://www.ampz.app).
+Static website for [www.ampz.app](https://www.ampz.app), deployed via **GitHub Pages**.
 
-## Deployment to NameCheap
+## Deployment
 
-1. Log into [NameCheap](https://www.namecheap.com/) → Dashboard → Manage (ampz.app)
-2. Go to **Hosting** → **cPanel** → **File Manager**
-3. Navigate to `public_html/`
-4. Upload **all** contents of this `website/` directory:
-   - `index.html` → `public_html/index.html`
-   - `privacy.html` → `public_html/privacy.html`
-   - `css/style.css` → `public_html/css/style.css`
-   - `images/*` → `public_html/images/`
-5. Verify at https://www.ampz.app
+Pushes to `main` are deployed automatically by GitHub Pages.
+
+- **Source:** `main` branch, repo root (`/`)
+- **Custom domain:** `www.ampz.app` (CNAME file in this directory)
+- **HTTPS:** enforced (cert auto-renewed)
+
+After a push, the new build typically goes live within ~30–60 seconds. To check build status:
+
+```bash
+GITHUB_TOKEN="" gh api repos/jonathancalpin/ampz-website/pages/builds/latest \
+  | jq '{status, commit, error, updated_at}'
+```
 
 ## Local Preview
 
@@ -28,18 +31,38 @@ python3 -m http.server 8000
 
 ```
 website/
-├── index.html          # Main landing page (single-page, 5 sections)
-├── privacy.html        # Privacy policy (required for App Store)
+├── index.html                    # Main landing page (single-page, 6 sections)
+├── privacy.html                  # Privacy policy (required for App Store)
+├── Ampz-User-Manual.pdf          # Published user manual (mirror of docs/manual/output/)
+├── CNAME                         # www.ampz.app (custom domain)
+├── robots.txt                    # Crawl directives
+├── sitemap.xml                   # Sitemap for search engines
 ├── css/
-│   └── style.css       # All styles
+│   └── style.css                 # All styles
 ├── images/
-│   ├── app-icon.png    # App icon (used in hero)
-│   ├── ampz-logo.png   # Logo with transparency
-│   ├── favicon.ico     # Browser tab icon
-│   ├── favicon-32.png  # 32x32 favicon
-│   ├── favicon-16.png  # 16x16 favicon
-│   └── apple-touch-icon.png  # iOS home screen icon
-└── README.md           # This file
+│   ├── app-icon.png              # App icon (used in hero)
+│   ├── ampz-logo.png             # Logo with transparency
+│   ├── favicon.ico               # Browser tab icon
+│   ├── favicon-32.png            # 32x32 favicon
+│   ├── favicon-16.png            # 16x16 favicon
+│   ├── apple-touch-icon.png      # iOS home screen icon
+│   └── screenshots/              # In-app screenshots used in feature sections
+└── README.md                     # This file
+```
+
+## Updating the User Manual
+
+The PDF served on the site is a copy of `docs/manual/output/Ampz-User-Manual.pdf` (in the main Ampz repo). To refresh it:
+
+```bash
+# In the main Ampz repo
+cd docs/manual && ./build.sh
+cp output/Ampz-User-Manual.pdf "../website/Ampz-User-Manual.pdf"
+
+# In the website repo (this directory)
+git add Ampz-User-Manual.pdf
+git commit -m "Refresh User Manual PDF"
+git push origin main
 ```
 
 ## External Dependencies
