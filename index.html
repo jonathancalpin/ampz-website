@@ -7,6 +7,13 @@
   <meta name="description" content="Ampz brings the Neural Amp Modeler (NAM) to your iPhone. Load .nam files with ultra-low latency — real amp tones, real-time processing, no compromises. Available now on the App Store.">
   <link rel="canonical" href="https://www.ampz.app/">
 
+  <!-- Google Search Console verification: TODO — replace REPLACE_WITH_GSC_TOKEN with the real token from
+       https://search.google.com/search-console (or verify via DNS TXT record instead and remove this tag) -->
+  <meta name="google-site-verification" content="REPLACE_WITH_GSC_TOKEN">
+
+  <!-- LCP: preload the hero screenshot (the page's Largest Contentful Paint element) -->
+  <link rel="preload" as="image" href="images/screenshots/main-view.webp" fetchpriority="high">
+
   <!-- Open Graph -->
   <meta property="og:title" content="Ampz — Neural Amp Modeler (NAM) for iOS">
   <meta property="og:description" content="Run Neural Amp Modeler .nam files on your iPhone with ultra-low latency. Real amp tones, real-time processing. Available now on the App Store.">
@@ -23,7 +30,21 @@
   <meta name="twitter:description" content="Run Neural Amp Modeler .nam files on your iPhone with ultra-low latency. Real amp tones, real-time processing. Available now on the App Store.">
   <meta name="twitter:image" content="https://www.ampz.app/images/app-icon.png">
 
-  <!-- Structured Data -->
+  <!-- Structured Data: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "LNH Enterprises LLC",
+    "url": "https://www.ampz.app",
+    "logo": "https://www.ampz.app/images/app-icon.png",
+    "sameAs": [
+      "https://apps.apple.com/us/app/ampz-guitar/id6761513571"
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: SoftwareApplication -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -67,13 +88,16 @@
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Fonts: system font stack only — no CDN request, matches the no-third-party-services privacy stance -->
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Cookieless analytics (placeholder — disabled): TODO — pick a cookieless provider (e.g. Plausible or
+       Cloudflare Web Analytics), sign up, and replace the data attributes below before uncommenting.
+  <script defer data-domain="ampz.app" src="https://plausible.io/js/script.js"></script>
+  -->
+
 </head>
 <body>
 
@@ -81,6 +105,10 @@
   <header>
     <nav aria-label="Main navigation">
       <a href="#features" class="sr-only">Skip to features</a>
+      <a href="#features">Features</a>
+      <a href="manual/">Manual</a>
+      <a href="what-is-neural-amp-modeler/">What is NAM</a>
+      <a href="privacy.html">Privacy</a>
     </nav>
   </header>
 
@@ -104,7 +132,10 @@
       <a href="Ampz-User-Manual.pdf" class="btn btn-outline" target="_blank">User Manual</a>
 
       <div class="hero-screenshot">
-        <img src="images/screenshots/main-view.png" alt="Ampz main interface showing 10-slot effects chain and NAM amp controls on iPhone" loading="eager" width="2000" height="920">
+        <picture>
+          <source srcset="images/screenshots/main-view.webp" type="image/webp">
+          <img src="images/screenshots/main-view.png" alt="Ampz main interface showing 10-slot effects chain and NAM amp controls on iPhone" loading="eager" fetchpriority="high" decoding="async" width="2000" height="920">
+        </picture>
       </div>
     </div>
   </section>
@@ -117,8 +148,12 @@
       <h2>Neural Amp Modeler (NAM)</h2>
       <h3>A2 Architecture — C++ Inference Engine for iOS</h3>
       <p>Powered by the A2 Architecture — a native C++ inference engine built for iOS. Load any .nam model with 100% original fidelity. No conversion, no quality loss, no compromises. Just the exact tone the model creator captured, running in real time with under 2.5ms latency.</p>
+      <p>New to NAM? Read <a href="what-is-neural-amp-modeler/">what Neural Amp Modeler actually is</a>, or jump straight to <a href="nam-files-iphone/">how to load .nam files on your iPhone</a>.</p>
       <div class="feature-screenshot">
-        <img src="images/screenshots/performance-view.png" alt="Ampz performance view showing real-time latency meter and pedalboard grid" loading="lazy" width="2000" height="920">
+        <picture>
+          <source srcset="images/screenshots/performance-view.webp" type="image/webp">
+          <img src="images/screenshots/performance-view.png" alt="Ampz performance view showing real-time latency meter and pedalboard grid" loading="lazy" width="2000" height="920">
+        </picture>
       </div>
       <a href="https://apps.apple.com/us/app/ampz-guitar/id6761513571" target="_blank">
         <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download Ampz on the App Store" style="height:50px;">
@@ -146,8 +181,12 @@
         <li>EQ (7-Band, High Pass, Low Pass)</li>
         <li>IR / Cabinet Loader</li>
       </ul>
+      <p>Want the same chain inside your DAW? Ampz also ships as an <a href="auv3-amp-modeler/">AUv3 amp modeler plugin</a> for AUM, Loopy Pro, and GarageBand.</p>
       <div class="feature-screenshot">
-        <img src="images/screenshots/looper-main-view.png" alt="Ampz looper with dual circular waveform display for recording and overdubbing" loading="lazy" width="2000" height="920">
+        <picture>
+          <source srcset="images/screenshots/looper-main-view.webp" type="image/webp">
+          <img src="images/screenshots/looper-main-view.png" alt="Ampz looper with dual circular waveform display for recording and overdubbing" loading="lazy" width="2000" height="920">
+        </picture>
       </div>
       <a href="https://apps.apple.com/us/app/ampz-guitar/id6761513571" target="_blank">
         <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download Ampz on the App Store" style="height:50px;">
@@ -164,7 +203,10 @@
       <h3>Tone3000 Integration — Thousands of NAM Models &amp; IRs</h3>
       <p>Browse and download thousands of amp captures and cabinet IRs directly from within the app. The rich detail browser shows cover artwork, contributor info, and download stats — sort by Trending, Newest, Oldest, or Most Downloaded. Pick exactly the file variants you want (different cabs, mics, rooms) and they land in your library with cover thumbnails ready to scan.</p>
       <div class="feature-screenshot">
-        <img src="images/screenshots/tone-3000-nam-list.png" alt="Ampz in-app Tone3000 browser showing NAM captures with cover artwork and download stats" loading="lazy" width="2000" height="920">
+        <picture>
+          <source srcset="images/screenshots/tone-3000-nam-list.webp" type="image/webp">
+          <img src="images/screenshots/tone-3000-nam-list.png" alt="Ampz in-app Tone3000 browser showing NAM captures with cover artwork and download stats" loading="lazy" width="2000" height="920">
+        </picture>
       </div>
       <a href="https://apps.apple.com/us/app/ampz-guitar/id6761513571" target="_blank">
         <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download Ampz on the App Store" style="height:50px;">
@@ -181,7 +223,10 @@
       <h3>Four Mapping Tiers — Slot, Effect, Parameter, Action</h3>
       <p>Map your footswitch to a slot position, to a specific effect (RAT bypass = same CC across every preset), to a parameter knob, or to global actions like Tap Tempo and Preset Up/Down. Tap any slot in the live Active Preset view to learn a new mapping inline — no hunting through menus. CC chips show every mapping at a glance.</p>
       <div class="feature-screenshot">
-        <img src="images/screenshots/midi-global-effect-mappings.png" alt="Ampz MIDI Global Effect Mappings — map a CC to any effect algorithm across all presets" loading="lazy" width="2000" height="920">
+        <picture>
+          <source srcset="images/screenshots/midi-global-effect-mappings.webp" type="image/webp">
+          <img src="images/screenshots/midi-global-effect-mappings.png" alt="Ampz MIDI Global Effect Mappings — map a CC to any effect algorithm across all presets" loading="lazy" width="2000" height="920">
+        </picture>
       </div>
       <a href="https://apps.apple.com/us/app/ampz-guitar/id6761513571" target="_blank">
         <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download Ampz on the App Store" style="height:50px;">
@@ -225,6 +270,7 @@
       <h2>User Manual</h2>
       <p>Everything you need to know about Ampz — setup, effects, presets, MIDI, looper, and more — in one comprehensive guide.</p>
       <a href="Ampz-User-Manual.pdf" class="btn btn-primary" target="_blank">Download User Manual (PDF)</a>
+      <a href="manual/" class="btn btn-outline" style="margin-top:0.75rem;">Read the Manual Online</a>
     </div>
   </section>
 

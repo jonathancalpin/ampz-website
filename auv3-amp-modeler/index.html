@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ampz — AUv3 Amp Modeler Plugin for iOS (AUM, GarageBand, Loopy Pro)</title>
+  <meta name="description" content="Ampz is an AUv3 amp modeler plugin for iOS — a NAM-powered guitar amp and effects insert with sub-2.5ms latency, for use in AUM, GarageBand for iOS, and Loopy Pro.">
+  <link rel="canonical" href="https://www.ampz.app/auv3-amp-modeler/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ampz — AUv3 Amp Modeler Plugin for iOS">
+  <meta property="og:description" content="A NAM-powered AUv3 amp modeler plugin with sub-2.5ms latency, for AUM, GarageBand for iOS, and Loopy Pro.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.ampz.app/auv3-amp-modeler/">
+  <meta property="og:image" content="https://www.ampz.app/images/app-icon.png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:site_name" content="Ampz">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ampz — AUv3 Amp Modeler Plugin for iOS">
+  <meta name="twitter:description" content="A NAM-powered AUv3 amp modeler plugin with sub-2.5ms latency, for AUM, GarageBand for iOS, and Loopy Pro.">
+  <meta name="twitter:image" content="https://www.ampz.app/images/app-icon.png">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Ampz AUv3 Plugin",
+    "operatingSystem": "iOS",
+    "applicationCategory": "MultimediaApplication",
+    "description": "Ampz's AUv3 effect plugin brings the same NAM amp modeling and 10-slot effects chain as the standalone app into any AUv3 host on iOS, with sub-2.5ms latency.",
+    "url": "https://www.ampz.app/auv3-amp-modeler/",
+    "author": {
+      "@type": "Organization",
+      "name": "LNH Enterprises LLC",
+      "url": "https://www.ampz.app"
+    },
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "url": "https://apps.apple.com/us/app/ampz-guitar/id6761513571",
+      "price": "9.99",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16.png">
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+
+  <!-- Fonts: system font stack only — no CDN request, matches the no-third-party-services privacy stance -->
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header>
+    <nav aria-label="Main navigation">
+      <a href="../index.html#features" class="sr-only">Skip to content</a>
+      <a href="../index.html#features">Features</a>
+      <a href="../manual/">Manual</a>
+      <a href="../what-is-neural-amp-modeler/">What is NAM</a>
+      <a href="../privacy.html">Privacy</a>
+    </nav>
+  </header>
+
+  <main class="content-page container">
+    <a href="../index.html" class="back-link">&larr; Back to Ampz</a>
+
+    <h1>Ampz: an AUv3 Amp Modeler Plugin for iOS</h1>
+    <p class="intro">Ampz isn't only a standalone app — it also ships as a full <strong>AUv3 effect plugin</strong> (type <code>aufx ampz LHNE</code>) that's automatically available inside any AUv3 host on your device once Ampz is installed. It's the same NAM-powered amp modeling and effects chain, running with the same sub-2.5&nbsp;ms latency, as an insert inside your DAW.</p>
+
+    <div class="content-cta">
+      <a href="https://apps.apple.com/us/app/ampz-guitar/id6761513571" target="_blank">
+        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download Ampz on the App Store" style="height:50px;">
+      </a>
+    </div>
+
+    <h2>What the plugin includes</h2>
+    <p>The AUv3 version is not a cut-down version of Ampz — it's the full effect insert:</p>
+    <ul>
+      <li>The complete 10-slot effects chain — every effect and algorithm from the standalone app</li>
+      <li><strong>Per-slot multi-NAM</strong> — any slot can host its own <code>.nam</code> model, exactly like the app, so you can chain multiple amp captures inside one plugin instance</li>
+      <li>Host-tempo sync for time-based effects — delay, tremolo, chorus, and other synced effects follow the host's BPM automatically</li>
+      <li>A named, host-automatable parameter tree — every slot exposes its real parameter names plus a Bypass switch, so you can record and automate them from your DAW timeline</li>
+    </ul>
+
+    <h2>Why NAM AUv3 latency matters</h2>
+    <p>Running a neural amp model inside a plugin host adds its own I/O overhead on top of whatever latency the host itself introduces. Ampz brackets its effects chain with a high-quality resampler, so the NAM model always runs at its native training rate regardless of the host's sample rate — <strong>any host rate works</strong>: 44.1&nbsp;kHz, 48&nbsp;kHz, 96&nbsp;kHz, and so on. Combined with a native C++ inference engine, this keeps the plugin's own processing overhead at sub-2.5&nbsp;ms, so what you hear tracks your playing the way a real amp would.</p>
+
+    <h2>Supported hosts</h2>
+    <p>Ampz loads like any other AUv3 effect. It's been used and tested in:</p>
+    <ul>
+      <li><strong>AUM</strong> — add Ampz as an effect insert on a channel strip</li>
+      <li><strong>Loopy Pro</strong> — insert it on a track for live looping with real amp tone</li>
+      <li><strong>GarageBand for iOS</strong> — add it as an amp/effect plugin on a guitar track</li>
+    </ul>
+    <p>The general flow in any host: open the host app, add an AUv3 effect insert to a channel or track, and choose <strong>Ampz</strong> from the <strong>LNH Enterprises LLC</strong> manufacturer group. The full Ampz interface opens inside the host.</p>
+    <p><strong>Force-quit the standalone Ampz app before using the plugin.</strong> The standalone app claims the device's audio input, which can prevent the plugin — running inside the host — from receiving your guitar signal. Swipe the standalone app away from the app switcher first.</p>
+
+    <h2>Shared model and preset library</h2>
+    <p>The app and the plugin share the same on-device storage:</p>
+    <ul>
+      <li>NAM models and cabinet IRs imported in the standalone app appear automatically inside the plugin — no re-downloading</li>
+      <li>The plugin can browse and apply the app's saved presets, including auto-loading whichever preset is currently active in the standalone app</li>
+    </ul>
+    <p>The practical workflow: import <code>.nam</code> files and dial in a rig using the standalone app's Files browser and built-in Tone3000 integration, then simply select the same model from inside the plugin when you're working in your DAW.</p>
+
+    <h2>Saving your rig</h2>
+    <p>When you save your host project — or a host/AUv3 preset — Ampz stores the entire rig: the effects chain, every slot's NAM model reference, and IR references, so the project recalls exactly as you left it. Ampz also supports AUv3 user presets, so you can save and recall rigs from the host's own preset menu.</p>
+
+    <div class="content-cta">
+      <a href="https://apps.apple.com/us/app/ampz-guitar/id6761513571" target="_blank">
+        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download Ampz on the App Store" style="height:50px;">
+      </a>
+    </div>
+
+    <div class="related-pages">
+      <h2>Keep reading</h2>
+      <ul>
+        <li><a href="../what-is-neural-amp-modeler/">What is Neural Amp Modeler (NAM), explained</a></li>
+        <li><a href="../nam-files-iphone/">How to load .nam files on iPhone and iPad</a></li>
+        <li><a href="../manual/#auv3-plugin">AUv3 chapter of the full user manual</a></li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 LNH Enterprises LLC. All rights reserved.</p>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="mailto:jonathan@ampz.app">Contact</a>
+      <a href="../Ampz-User-Manual.pdf" target="_blank">User Manual</a>
+      <a href="../privacy.html">Privacy Policy</a>
+    </nav>
+  </footer>
+
+</body>
+</html>

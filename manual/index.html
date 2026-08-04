@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ampz User Manual — Full Guide (NAM, Effects, MIDI, Looper, AUv3)</title>
+  <meta name="description" content="The complete Ampz user manual online: NAM amplifier, 17-effect chain, 100-slot presets, MIDI mapping, dual looper, drum loops, tuner, Tone3000, and the AUv3 plugin. Also available as a PDF download.">
+  <link rel="canonical" href="https://www.ampz.app/manual/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ampz User Manual — Full Guide">
+  <meta property="og:description" content="The complete Ampz user manual: NAM amplifier, effects chain, presets, MIDI, looper, drum loops, tuner, Tone3000, and the AUv3 plugin.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.ampz.app/manual/">
+  <meta property="og:image" content="https://www.ampz.app/images/app-icon.png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:site_name" content="Ampz">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ampz User Manual — Full Guide">
+  <meta name="twitter:description" content="The complete Ampz user manual: NAM amplifier, effects chain, presets, MIDI, looper, drum loops, tuner, Tone3000, and the AUv3 plugin.">
+  <meta name="twitter:image" content="https://www.ampz.app/images/app-icon.png">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Ampz User Manual",
+    "description": "The complete Ampz user manual: NAM amplifier, effects chain, presets, MIDI, looper, drum loops, tuner, Tone3000, and the AUv3 plugin.",
+    "url": "https://www.ampz.app/manual/",
+    "author": {
+      "@type": "Organization",
+      "name": "LNH Enterprises LLC",
+      "url": "https://www.ampz.app"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LNH Enterprises LLC",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.ampz.app/images/app-icon.png"
+      }
+    }
+  }
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16.png">
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+
+  <!-- Fonts: system font stack only — no CDN request, matches the no-third-party-services privacy stance -->
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header>
+    <nav aria-label="Main navigation">
+      <a href="../index.html#features" class="sr-only">Skip to content</a>
+      <a href="../index.html#features">Features</a>
+      <a href="../manual/">Manual</a>
+      <a href="../what-is-neural-amp-modeler/">What is NAM</a>
+      <a href="../privacy.html">Privacy</a>
+    </nav>
+  </header>
+
+  <main class="content-page container">
+    <a href="../index.html" class="back-link">&larr; Back to Ampz</a>
+
+    <h1>Ampz User Manual</h1>
+    <p class="effective-date">Version 1.5.0 — LNH Enterprises LLC</p>
+    <p class="intro">This page covers every feature in Ampz. Prefer a printable copy? <a href="../Ampz-User-Manual.pdf" target="_blank">Download the full PDF manual</a>.</p>
+
+    <div class="content-cta">
+      <a href="../Ampz-User-Manual.pdf" class="btn btn-primary" target="_blank">Download User Manual (PDF)</a>
+    </div>
+
+    <h2>Contents</h2>
+    <ul>
+      <li><a href="#getting-started">Getting Started</a></li>
+      <li><a href="#nam-amplifier">NAM Amplifier</a></li>
+      <li><a href="#effects-chain">Effects Chain</a></li>
+      <li><a href="#presets">Preset System</a></li>
+      <li><a href="#looper">Looper</a></li>
+      <li><a href="#drum-loops">Drum Loops</a></li>
+      <li><a href="#tuner">Tuner</a></li>
+      <li><a href="#midi">MIDI</a></li>
+      <li><a href="#tone3000">Tone3000</a></li>
+      <li><a href="#auv3-plugin">The Ampz AUv3 Plugin</a></li>
+    </ul>
+
+    <h2 id="getting-started">Getting Started</h2>
+    <p>Ampz is a professional-grade guitar amp modeling app for iOS, powered by Neural Amp Modeling (NAM) technology. NAM uses deep neural networks (WaveNet and LSTM architectures) trained on real amplifier recordings to faithfully reproduce the sonic characteristics of physical guitar amplifiers.</p>
+    <p>Ampz targets ultra-low latency: using Apple's RemoteIO Audio Unit with 64-sample buffers at 48&nbsp;kHz, it achieves buffer latency as low as 1.33&nbsp;ms. Requirements: iOS/iPadOS 18.0 or later, and a USB or Lightning audio interface with an instrument-level input for the best latency and signal quality. iPad uses an adaptive sidebar layout with scaled controls.</p>
+    <p>Quick start: connect your guitar via a USB audio interface, open Ampz (the NAM Amplifier slot is ready by default), download a model from the <strong>Tone3000</strong> tab or import a <code>.nam</code> file via <strong>My Models</strong>, then play. Add effects by double-tapping empty slots in the chain, and use the preset chevrons or the preset name/number display to browse the 100 preset slots.</p>
+
+    <h2 id="nam-amplifier">NAM Amplifier</h2>
+    <p>Neural Amp Modeling captures a real guitar amplifier's sonic behavior with a neural network trained on measurements taken at thousands of signal levels and frequencies. Ampz runs the NAM inference engine natively in C++ using the NeuralAudio library with Eigen linear algebra and Apple's Accelerate framework for SIMD optimization — authentic amp tone at under 2.5&nbsp;ms latency.</p>
+    <p>Ampz doesn't ship with bundled models — you bring your own, either from the in-app <strong>Tone3000</strong> browser or by importing a <code>.nam</code> file from your device. <strong>Any of the 10 effect-chain slots can host its own NAM model</strong>, not just the default Amplifier slot, so you can run several amp captures at once — for example a clean amp feeding a boosted lead amp.</p>
+    <p>NAM knobs:</p>
+    <table>
+      <tr><th>Knob</th><th>Range</th><th>Description</th></tr>
+      <tr><td>INPUT</td><td>−24…+24&nbsp;dB</td><td>Input level into the NAM model</td></tr>
+      <tr><td>GATE</td><td>−100…0&nbsp;dB</td><td>Noise-gate threshold applied before the model</td></tr>
+      <tr><td>BASS / MIDDLE / TREBLE</td><td>0–10</td><td>3-band EQ applied after NAM processing</td></tr>
+      <tr><td>OUTPUT</td><td>−40…+40&nbsp;dB</td><td>Output level after all NAM processing</td></tr>
+      <tr><td>QUALITY</td><td>0–100%</td><td>CPU/fidelity trade-off — A2 "slimmable" models only</td></tr>
+    </table>
+    <p>The algorithm bar above the knobs cycles the <strong>output mode</strong> — Raw (untouched model output), Normalized (levels every model to consistent loudness, the default), or Calibrated (matches real-world gain staging, adding an Input Cal knob and Cal In toggle) — plus Gate, EQ, and Bypass toggles for the slot.</p>
+
+    <h2 id="effects-chain">Effects Chain</h2>
+    <p>A full pedalboard on your phone: 10 drag-to-reorder slots, 17 effect types across 10 categories, all running natively on iOS with studio-grade DSP. Tap a slot to select it, double-tap an empty slot to open the Effect Browser, or long-press and drag to reorder.</p>
+    <table>
+      <tr><th>Category</th><th>Effects</th></tr>
+      <tr><td>Dynamics</td><td>Noise Gate, Compressor, Limiter</td></tr>
+      <tr><td>Distortion / Overdrive</td><td>Screamer, Klear, Mouse, Fuzz&nbsp;32, Turbo — all Wave Digital Filter (WDF) circuit models</td></tr>
+      <tr><td>Amplifier</td><td>NAM Amp (any slot)</td></tr>
+      <tr><td>Modulation</td><td>Chorus (Classic/Dimension/Tri-Chorus), Flanger, Phaser (4-/6-Stage), Tremolo, Vibrato</td></tr>
+      <tr><td>Pitch</td><td>Poly Shifter (phase-vocoder Pitch Shift or Analog Octave)</td></tr>
+      <tr><td>Wah</td><td>LFO or Envelope (auto-wah), with manual mode</td></tr>
+      <tr><td>EQ / Filters</td><td>7-Band EQ, High Pass, Low Pass</td></tr>
+      <tr><td>Reverb</td><td>Room, Hall, Plate, Spring, Z-Verb</td></tr>
+      <tr><td>Delay</td><td>Digital, Tape Echo, BBD</td></tr>
+      <tr><td>Cabinet / IR</td><td>IR Loader — single or dual cab, imports from Files or Tone3000</td></tr>
+    </table>
+    <p>Delay, tremolo, and chorus support tempo sync to the global BPM (quarter, eighth, dotted-eighth, sixteenth, and triplet subdivisions). Reverb and delay support spillover ("Effect Trails" in Settings) so tails decay naturally through a bypass or preset switch instead of cutting off abruptly.</p>
+
+    <h2 id="presets">Preset System</h2>
+    <p>Ampz has 100 preset slots (00–99). Slots 00–09 are the factory range — slot 00 ships with a user-editable "First Rig" starter preset, and all factory slots can be overwritten. Slots 10–99 are empty user slots by default.</p>
+    <p>Each preset stores the complete rig state: all 10 effect slot configurations (type, algorithm, parameters, enable state), the NAM model file reference, IR file references, and chain-level enable/bypass. The Preset Browser (tap the preset name/number in the toolbar) offers a search bar, category filter pills (Factory/User/Custom), and a 4-column visual grid. Presets are stored as JSON and can be exported/imported for sharing via AirDrop, email, or file transfer.</p>
+
+    <h2 id="looper">Looper</h2>
+    <p>Two independent loop tracks, each with a circular waveform display, Record/Play/Stop/Clear controls, a volume fader, Reverse and Half-Speed toggles, and a mode selector (Normal, One-Shot, Replace, Decay). The looper records post-effects audio — your full processed signal including the NAM amp and every active effect.</p>
+    <p>Recording flow: tap the circle to start recording, tap again to stop and begin playback, tap while playing to enter overdub (layers new audio on top), tap again to exit overdub. A routing switch selects <strong>Parallel</strong> (both loops mixed at the output) or <strong>Serial</strong> (Loop&nbsp;1 feeds into Loop&nbsp;2). Optional Quantize snaps record start/stop to Beat, Half Bar, or Bar boundaries at the global BPM.</p>
+
+    <h2 id="drum-loops">Drum Loops</h2>
+    <p>A built-in drum loop player for practice accompaniment: 160 professionally recorded AAC loops across 10 genres (Blues, Country, Funk, Jazz, Latin, Metal, Pop, R&amp;B, Reggae, Rock) and 6 time signatures (3/4, 4/4, 5/4, 6/8, 7/4, 7/8). Loops are time-stretched in real time to match your global BPM, and can be captured into looper recordings via the Looper Integration toggle.</p>
+
+    <h2 id="tuner">Tuner</h2>
+    <p>A built-in chromatic tuner with a note-name display, exact frequency readout, and a color-coded cents gauge (green within ±5&nbsp;cents, amber within ±15, red beyond). A Mute toggle silences output while tuning (auto-disabled when you close the tuner), and the reference pitch for A4 is adjustable from 430–450&nbsp;Hz (440&nbsp;Hz default).</p>
+
+    <h2 id="midi">MIDI</h2>
+    <p>Ampz organizes MIDI control into four mapping tiers, each with a different identity model:</p>
+    <table>
+      <tr><th>Tier</th><th>Keyed by</th><th>Use it for</th></tr>
+      <tr><td>CC Mappings</td><td>Slot + parameter</td><td>A knob/pedal controlling a specific parameter on whichever effect is in that slot</td></tr>
+      <tr><td>Slot Bypass Mappings</td><td>Slot index</td><td>A footswitch toggling a specific slot position, across all presets</td></tr>
+      <tr><td>Global Effect Mappings</td><td>Effect + algorithm</td><td>A footswitch toggling every instance of an effect (e.g. every Klear) regardless of slot</td></tr>
+      <tr><td>Action Mappings</td><td>App action</td><td>Global actions — Tap Tempo, Preset Up/Down, looper transport</td></tr>
+    </table>
+    <p>All mapping types use the same MIDI Learn flow: tap Learn, move the controller, and Ampz captures the CC automatically. Ampz also supports MIDI Program Change (switches presets 0–99) and Bluetooth MIDI pairing for wireless controllers and foot switches.</p>
+
+    <h2 id="tone3000">Tone3000</h2>
+    <p>Tone3000 is a community platform for NAM models and cabinet IRs, integrated directly into Ampz's model and IR browsers. Each capture shows as a rich card with cover art, capture count, contributor handle, and download/favorite stats. Browse/Favorites segmented controls and category chips (Amps, Full Rigs, Pedals, Outboard) narrow the list, and a sort menu offers Trending, Newest, Oldest, or Most Downloaded. A single capture can include multiple file variants (different cabs, mic positions, room takes) — pick exactly the ones you want before downloading; they land in your library with cover thumbnails pre-populated.</p>
+
+    <h2 id="auv3-plugin">The Ampz AUv3 Plugin</h2>
+    <p>Ampz also ships as an Audio Unit v3 (AUv3) effect plugin (type <code>aufx ampz LHNE</code>), embedded inside the app and automatically available to any AUv3 host once Ampz is installed — no separate download. It runs the same DSP engine as the standalone app: the complete 10-slot effects chain, per-slot multi-NAM, host-tempo sync for time-based effects, and a named, host-automatable parameter tree.</p>
+    <p>Because the plugin runs at the host's sample rate, Ampz brackets the chain with a high-quality resampler so the neural models always run at their native rate — any host rate works. Load it in <strong>AUM</strong>, <strong>Loopy Pro</strong>, or <strong>GarageBand for iOS</strong> by adding an AUv3 effect insert and choosing Ampz from the LNH Enterprises LLC manufacturer group. Force-quit the standalone app first — it claims the audio input and can block the plugin from receiving signal.</p>
+    <p>Models, IRs, and presets are shared between the app and the plugin via the same on-device library, and saving your host project stores the entire rig (chain, NAM model references, IR references) so it recalls exactly as you left it. See the dedicated <a href="../auv3-amp-modeler/">AUv3 amp modeler page</a> for more detail.</p>
+
+    <div class="content-cta">
+      <a href="../Ampz-User-Manual.pdf" class="btn btn-primary" target="_blank">Download User Manual (PDF)</a>
+    </div>
+
+    <div class="related-pages">
+      <h2>Keep reading</h2>
+      <ul>
+        <li><a href="../what-is-neural-amp-modeler/">What is Neural Amp Modeler (NAM), explained</a></li>
+        <li><a href="../nam-files-iphone/">How to load .nam files on iPhone and iPad</a></li>
+        <li><a href="../auv3-amp-modeler/">Ampz as an AUv3 amp modeler plugin</a></li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 LNH Enterprises LLC. All rights reserved.</p>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="mailto:jonathan@ampz.app">Contact</a>
+      <a href="../Ampz-User-Manual.pdf" target="_blank">User Manual</a>
+      <a href="../privacy.html">Privacy Policy</a>
+    </nav>
+  </footer>
+
+</body>
+</html>

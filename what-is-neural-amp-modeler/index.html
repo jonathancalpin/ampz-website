@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Is Neural Amp Modeler (NAM)? — Explained | Ampz</title>
+  <meta name="description" content="What is Neural Amp Modeler (NAM)? A plain-English explanation of the .nam file format, WaveNet/LSTM amp captures, and how NAM guitar tone differs from traditional amp sims and fixed captures like Kemper or ToneX.">
+  <link rel="canonical" href="https://www.ampz.app/what-is-neural-amp-modeler/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="What Is Neural Amp Modeler (NAM)? — Explained">
+  <meta property="og:description" content="A plain-English explanation of Neural Amp Modeler: the .nam file format, WaveNet/LSTM amp captures, and how it differs from traditional amp sims.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.ampz.app/what-is-neural-amp-modeler/">
+  <meta property="og:image" content="https://www.ampz.app/images/app-icon.png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:site_name" content="Ampz">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="What Is Neural Amp Modeler (NAM)? — Explained">
+  <meta name="twitter:description" content="A plain-English explanation of Neural Amp Modeler: the .nam file format, WaveNet/LSTM amp captures, and how it differs from traditional amp sims.">
+  <meta name="twitter:image" content="https://www.ampz.app/images/app-icon.png">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "What Is Neural Amp Modeler (NAM)?",
+    "description": "A plain-English explanation of Neural Amp Modeler: the .nam file format, WaveNet/LSTM amp captures, and how it differs from traditional amp sims and fixed captures like Kemper or ToneX.",
+    "url": "https://www.ampz.app/what-is-neural-amp-modeler/",
+    "author": {
+      "@type": "Organization",
+      "name": "LNH Enterprises LLC",
+      "url": "https://www.ampz.app"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LNH Enterprises LLC",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.ampz.app/images/app-icon.png"
+      }
+    }
+  }
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16.png">
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+
+  <!-- Fonts: system font stack only — no CDN request, matches the no-third-party-services privacy stance -->
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header>
+    <nav aria-label="Main navigation">
+      <a href="../index.html#features" class="sr-only">Skip to content</a>
+      <a href="../index.html#features">Features</a>
+      <a href="../manual/">Manual</a>
+      <a href="../what-is-neural-amp-modeler/">What is NAM</a>
+      <a href="../privacy.html">Privacy</a>
+    </nav>
+  </header>
+
+  <main class="content-page container">
+    <a href="../index.html" class="back-link">&larr; Back to Ampz</a>
+
+    <h1>What Is Neural Amp Modeler (NAM)?</h1>
+    <p class="intro">Neural Amp Modeler — usually shortened to NAM — is an open-source neural-network format for capturing the sound of a real guitar amplifier and reproducing it in real time. This page explains what NAM actually is, how the underlying <code>.nam</code> files work, and how it's different from the amp sims and profiling gear you may already know.</p>
+
+    <h2>The short version</h2>
+    <p>NAM guitar tone is captured, not designed. Instead of an engineer hand-tuning a circuit model to approximate an amplifier, a neural network is trained directly on recordings of the real amp — it learns the amp's exact input/output behavior across thousands of signal levels and frequencies. The result is a small model file (a <code>.nam</code> file) that reproduces the amp's tone with remarkable fidelity, and can run in real time on a phone.</p>
+
+    <h2>How a .nam file is made</h2>
+    <p>Capturing an amp for NAM follows a repeatable process:</p>
+    <ol>
+      <li>A wide-bandwidth test signal (a long, carefully designed audio sweep) is played into the real amplifier through an audio interface.</li>
+      <li>The amp's output — through a mic'd cabinet, a load box, or direct from a modeler — is recorded back in.</li>
+      <li>A neural network is trained on the input/output pair until it can predict the amp's output from any input signal, not just the training sweep.</li>
+      <li>The trained network's weights are exported as a <code>.nam</code> file — typically a few hundred kilobytes to a few megabytes, depending on the architecture.</li>
+    </ol>
+    <p>Anyone can run this capture process with free, open-source tooling, which is why thousands of community-captured <code>.nam</code> models exist for everything from boutique tube heads to vintage combo amps — many of them shared on platforms like Tone3000.</p>
+
+    <h2>WaveNet and LSTM: the two common architectures</h2>
+    <p>Most <code>.nam</code> files use one of two neural network architectures:</p>
+    <ul>
+      <li><strong>WaveNet</strong> — a dilated convolutional network (originally developed for speech synthesis) adapted to model audio waveforms sample-by-sample. WaveNet captures tend to reproduce nonlinear distortion and harmonic content with high accuracy.</li>
+      <li><strong>LSTM</strong> (Long Short-Term Memory) — a recurrent neural network architecture well-suited to modeling how an amplifier's response depends on recent signal history (important for dynamics and sag).</li>
+    </ul>
+    <p>Ampz's inference engine loads either architecture — plus the newer slimmable "A2" container format, which lets a single model run at a lower internal resolution for less CPU cost — with no conversion step and no loss of fidelity versus the original capture.</p>
+
+    <h2>How NAM differs from a traditional amp sim</h2>
+    <p>Traditional software amp simulators (the kind that have existed since the early 2000s) work by modeling the amplifier's electronic circuit — the preamp tubes, the power section, the tone stack — as a chain of discrete DSP components tuned by ear to approximate the target amp. This works well, but it's fundamentally an approximation built by a developer's judgment about what "sounds right."</p>
+    <p>NAM instead learns the amp's actual measured behavior. There's no circuit model in the loop — the neural network's weights <em>are</em> the tone. This tends to produce a more faithful match to the specific unit that was captured, including its specific quirks, at the cost of not being adjustable in the way a circuit model's virtual components are (you can't turn a "virtual power tube bias" knob on a NAM capture, because there isn't one — the amp's front-panel knob settings are baked into whichever capture you loaded).</p>
+
+    <h2>How NAM differs from a hardware profiler (Kemper, ToneX)</h2>
+    <p>Hardware profilers like the Kemper Profiler or IK Multimedia's ToneX pedal use a broadly similar idea — measuring a real amp and reproducing its behavior — but they're closed, proprietary systems tied to specific hardware or apps. NAM is an open file format and an open-source inference library: any developer can build a NAM player, any amp owner can capture their own amp with free tools, and the resulting <code>.nam</code> files are portable between every app that supports them.</p>
+    <p>The other key difference is where the model runs. Profiler captures typically live on dedicated hardware. NAM was built to run efficiently enough for real-time inference on general-purpose hardware — including, with the right native inference engine, an iPhone. Ampz's C++ engine is built specifically to hit sub-2.5&nbsp;ms round-trip latency running <code>.nam</code> files directly on iOS, with no cloud processing and no external hardware required beyond an audio interface.</p>
+
+    <h2>Where to get .nam files</h2>
+    <p>You don't need to capture your own amp to use NAM. <a href="https://www.tone3000.com/" target="_blank" rel="noopener">Tone3000</a> is a large community library of free, community-captured <code>.nam</code> models and cabinet impulse responses (IRs) covering everything from clean Fender-style combos to high-gain metal heads. Ampz has a built-in Tone3000 browser, so you can search, preview, and download directly inside the app.</p>
+
+    <div class="content-cta">
+      <a href="https://apps.apple.com/us/app/ampz-guitar/id6761513571" target="_blank">
+        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download Ampz on the App Store" style="height:50px;">
+      </a>
+    </div>
+
+    <div class="related-pages">
+      <h2>Keep reading</h2>
+      <ul>
+        <li><a href="../nam-files-iphone/">How to load .nam files on iPhone and iPad with Ampz</a></li>
+        <li><a href="../auv3-amp-modeler/">Ampz as an AUv3 amp modeler plugin for AUM, GarageBand, and Loopy Pro</a></li>
+        <li><a href="../manual/">Read the full Ampz user manual</a></li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 LNH Enterprises LLC. All rights reserved.</p>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="mailto:jonathan@ampz.app">Contact</a>
+      <a href="../Ampz-User-Manual.pdf" target="_blank">User Manual</a>
+      <a href="../privacy.html">Privacy Policy</a>
+    </nav>
+  </footer>
+
+</body>
+</html>

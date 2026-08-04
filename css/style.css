@@ -24,7 +24,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
   background: #1C1C2E;
   color: #ffffff;
   line-height: 1.6;
@@ -65,6 +65,34 @@ h3 {
 p {
   color: rgba(255, 255, 255, 0.8);
   max-width: 600px;
+}
+
+/* ===== Header / Nav ===== */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding: 1.5rem;
+}
+
+header nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+}
+
+header nav a:not(.sr-only) {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.65);
+  transition: color 0.2s;
+}
+
+header nav a:not(.sr-only):hover {
+  color: #FF6B81;
 }
 
 /* ===== Layout ===== */
@@ -408,46 +436,109 @@ section {
   margin: 0 0.75rem;
 }
 
-/* ===== Privacy Policy Page ===== */
-.privacy-page {
+/* ===== Privacy Policy Page / Long-form Content Pages (manual, education articles) ===== */
+.privacy-page,
+.content-page {
   padding: 4rem 1.5rem;
   min-height: 100vh;
 }
 
-.privacy-page h1 {
+.privacy-page h1,
+.content-page h1 {
   margin-bottom: 0.5rem;
 }
 
-.privacy-page .effective-date {
+.privacy-page .effective-date,
+.content-page .effective-date {
   color: rgba(255, 255, 255, 0.4);
   font-size: 0.9rem;
   margin-bottom: 3rem;
 }
 
-.privacy-page h2 {
+.privacy-page h2,
+.content-page h2 {
   font-size: 1.4rem;
   margin-top: 2.5rem;
   margin-bottom: 0.75rem;
 }
 
+.privacy-page h3,
+.content-page h3 {
+  font-size: 1.1rem;
+  margin-top: 1.5rem;
+}
+
 .privacy-page p,
-.privacy-page li {
+.privacy-page li,
+.content-page p,
+.content-page li {
   color: rgba(255, 255, 255, 0.75);
   max-width: 700px;
   margin-bottom: 1rem;
 }
 
-.privacy-page ul {
+.privacy-page ul,
+.privacy-page ol,
+.content-page ul,
+.content-page ol {
   padding-left: 1.5rem;
   margin-bottom: 1rem;
 }
 
-.privacy-page a {
+.privacy-page a,
+.content-page a {
   color: #FF6B81;
 }
 
-.privacy-page a:hover {
+.privacy-page a:hover,
+.content-page a:hover {
   text-decoration: underline;
+}
+
+.content-page .intro {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin-bottom: 2rem;
+}
+
+.content-page .content-cta {
+  margin: 2.5rem 0;
+}
+
+.content-page section {
+  padding: 0;
+  overflow: visible;
+}
+
+.content-page table {
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  max-width: 700px;
+}
+
+.content-page th,
+.content-page td {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.5rem 0.9rem;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.92rem;
+}
+
+.content-page th {
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.content-page .related-pages {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.content-page .related-pages h2 {
+  margin-top: 0;
 }
 
 .back-link {
