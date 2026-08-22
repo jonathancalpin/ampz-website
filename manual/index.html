@@ -74,7 +74,7 @@
     <a href="../index.html" class="back-link">&larr; Back to Ampz</a>
 
     <h1>Ampz User Manual</h1>
-    <p class="effective-date">Version 1.5.0 — LNH Enterprises LLC</p>
+    <p class="effective-date">Version 1.6.0 — LNH Enterprises LLC</p>
     <p class="intro">This page covers every feature in Ampz. Prefer a printable copy? <a href="../Ampz-User-Manual.pdf" target="_blank">Download the full PDF manual</a>.</p>
 
     <div class="content-cta">
@@ -133,7 +133,8 @@
 
     <h2 id="presets">Preset System</h2>
     <p>Ampz has 100 preset slots (00–99). Slots 00–09 are the factory range — slot 00 ships with a user-editable "First Rig" starter preset, and all factory slots can be overwritten. Slots 10–99 are empty user slots by default.</p>
-    <p>Each preset stores the complete rig state: all 10 effect slot configurations (type, algorithm, parameters, enable state), the NAM model file reference, IR file references, and chain-level enable/bypass. The Preset Browser (tap the preset name/number in the toolbar) offers a search bar, category filter pills (Factory/User/Custom), and a 4-column visual grid. Presets are stored as JSON and can be exported/imported for sharing via AirDrop, email, or file transfer.</p>
+    <p>Each preset stores the complete rig state: all 10 effect slot configurations (type, algorithm, parameters, enable state), the NAM model file reference, IR file references, and chain-level enable/bypass. The Preset Browser (tap the preset name/number in the toolbar) offers a search bar, category filter pills (Factory/User/Custom), and a 4-column visual grid. Presets are stored as JSON.</p>
+    <p>To share a sound, Ampz exports a <strong>rig</strong> rather than a bare preset. A preset refers to its NAM model and cabinet IR by filename, so on its own it would arrive on someone else's device with the amp and cab slots empty. An <code>.ampzrig</code> file carries the preset <em>and</em> the models and IRs it uses, so it loads ready to play. Press and hold a preset in the browser and choose <strong>Share Rig</strong> to send one via AirDrop, Messages, Mail, or Files; Ampz confirms exactly what the file will contain first, since it copies your amp captures into it. Incoming rigs open from the browser's <strong>Import Rig</strong> button or straight from Files, and land in the first empty slot so nothing is overwritten. If a referenced model or IR did not travel, Ampz names it rather than silently loading a half-empty chain.</p>
 
     <h2 id="looper">Looper</h2>
     <p>Two independent loop tracks, each with a circular waveform display, Record/Play/Stop/Clear controls, a volume fader, Reverse and Half-Speed toggles, and a mode selector (Normal, One-Shot, Replace, Decay). The looper records post-effects audio — your full processed signal including the NAM amp and every active effect.</p>
