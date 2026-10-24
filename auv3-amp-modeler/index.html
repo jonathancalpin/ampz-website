@@ -31,7 +31,7 @@
     "name": "Ampz AUv3 Plugin",
     "operatingSystem": "iOS",
     "applicationCategory": "MultimediaApplication",
-    "description": "Ampz's AUv3 effect plugin brings the same NAM amp modeling and 10-slot effects chain as the standalone app into any AUv3 host on iOS, with sub-2.5ms latency.",
+    "description": "Ampz's AUv3 effect plugin brings the same NAM amp modeling and 16-slot effects chain as the standalone app into any AUv3 host on iOS, with sub-2.5ms latency.",
     "url": "https://www.ampz.app/auv3-amp-modeler/",
     "author": {
       "@type": "Organization",
@@ -86,10 +86,10 @@
     <h2>What the plugin includes</h2>
     <p>The AUv3 version is not a cut-down version of Ampz — it's the full effect insert:</p>
     <ul>
-      <li>The complete 10-slot effects chain — every effect and algorithm from the standalone app</li>
+      <li>The complete 16-slot effects chain — every effect and algorithm from the standalone app, including split lanes, the Mix block, scenes and the Signal Path templates</li>
       <li><strong>Per-slot multi-NAM</strong> — any slot can host its own <code>.nam</code> model, exactly like the app, so you can chain multiple amp captures inside one plugin instance</li>
       <li>Host-tempo sync for time-based effects — delay, tremolo, chorus, and other synced effects follow the host's BPM automatically</li>
-      <li>A named, host-automatable parameter tree — every slot exposes its real parameter names plus a Bypass switch, so you can record and automate them from your DAW timeline</li>
+      <li>A named, host-automatable parameter tree — every slot exposes its real parameter names plus a Bypass switch, and a global group adds Scene and the Mix block controls, so you can record and automate them from your DAW timeline</li>
     </ul>
 
     <h2>Why NAM AUv3 latency matters</h2>
@@ -114,7 +114,7 @@
     <p>The practical workflow: import <code>.nam</code> files and dial in a rig using the standalone app's Files browser and built-in Tone3000 integration, then simply select the same model from inside the plugin when you're working in your DAW.</p>
 
     <h2>Saving your rig</h2>
-    <p>When you save your host project — or a host/AUv3 preset — Ampz stores the entire rig: the effects chain, every slot's NAM model reference, and IR references, so the project recalls exactly as you left it. Ampz also supports AUv3 user presets, so you can save and recall rigs from the host's own preset menu.</p>
+    <p>When you save your host project — or a host/AUv3 preset — Ampz stores the entire rig: the effects chain, every slot's NAM model reference, and IR references, so the project recalls exactly as you left it. Ampz also supports AUv3 user presets, so you can save and recall rigs from the host's own preset menu, and the plugin's Save button writes a rig straight into the app's 100-slot library.</p>
 
     <div class="content-cta">
       <a href="https://apps.apple.com/us/app/ampz-guitar/id6761513571" target="_blank">
